@@ -15,7 +15,7 @@ namespace GirlyDrink.CreditTool.Editor
         private string creditList = "";
         private Vector2 textScrollPosition;
 
-        [MenuItem("Tools/Credit Tool")]
+        [MenuItem("Tools/GirlyDrink's Tools/Credit Tool")]
         public static void ShowWindow()
         {
             var window = GetWindow<CreditToolWindow>("Credit Tool");

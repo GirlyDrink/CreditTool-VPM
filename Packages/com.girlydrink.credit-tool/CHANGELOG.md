@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.2] - 2025-06-13
+### Changed
+- Moved the Credit Tool menu item from `Tools/Credit Tool` to `Tools/GirlyDrink's Tools/Credit Tool`.
+- Updated `README.md` and `package.json` to reflect the new menu path.
+
 ## [1.0.1] - 2025-06-13
 ### Changed
 - Updated package name to `com.girlydrink.credit-tool` and username to `GirlyDrink`.
@@ -11,7 +16,7 @@
 ### Added
 - Initial release of Credit Tool.
 - `CreditComponent` implementing `IEditorOnly` for adding author and single asset information to prefabs in the Editor.
-- Editor window under `Tools > Credit Tool` to scan a GameObject hierarchy and display a formatted credit list in a textbox, merging assets by author.
+- Editor window under `Tools/Credit Tool` to scan a GameObject hierarchy and display a formatted credit list in a textbox, merging assets by author.
 - VPM package configuration for VRChat compatibility.
 
 ### Fixed
