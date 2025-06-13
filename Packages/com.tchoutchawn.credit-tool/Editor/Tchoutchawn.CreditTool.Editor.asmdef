@@ -1,0 +1,17 @@
+{
+    "name": "Tchoutchawn.CreditTool.Editor",
+    "references": [
+        "Tchoutchawn.CreditTool"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

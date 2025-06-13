@@ -1,9 +1,7 @@
 {
-    "name": "VRChatPackageTemplate.Editor",
+    "name": "Tchoutchawn.CreditTool",
     "references": [],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
