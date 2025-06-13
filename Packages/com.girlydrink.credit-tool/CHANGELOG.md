@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.4] - 2025-06-13
+### Fixed
+- Replaced `DistinctBy` with `Distinct` using a custom `IEqualityComparer` in `CreditToolWindow.cs` to resolve CS1061 error, ensuring compatibility with Unity 2022.3's .NET 4.x.
+
 ## [1.0.3] - 2025-06-13
 ### Added
 - Added `authorStoreLink` field to `CreditComponent` for author store or profile URLs.

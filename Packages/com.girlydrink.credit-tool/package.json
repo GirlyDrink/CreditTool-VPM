@@ -1,9 +1,9 @@
 {
   "name": "com.girlydrink.credit-tool",
   "displayName": "Credit Tool",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "unity": "2022.3",
-  "description": "A tool for VRChat creators to manage and compile credits for prefabs in avatars and worlds. Add the Editor-only CreditComponent (implementing IEditorOnly) to prefabs with author, author store link, and asset details, then use the Credit Tool window (Tools > GirlyDrink's Tools > Credit Tool) to generate a formatted credit list in a textbox, with options to include author store and asset links, merging assets by author.",
+  "description": "A tool for VRChat creators to manage and compile credits for prefabs in avatars and worlds. Add the Editor-only CreditComponent (implementing IEditorOnly) to prefabs with author, author store link, and asset details, then use the Credit Tool window (Tools > GirlyDrink's Tools > Credit Tool) to generate a formatted credit list in a textbox, with options to include author store and asset links, merging assets by author. Compatible with Unity 2022.3's .NET 4.x.",
   "author": {
     "name": "GirlyDrink",
     "url": "https://github.com/GirlyDrink"

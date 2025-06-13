@@ -109,7 +109,7 @@ namespace GirlyDrink.CreditTool.Editor
             foreach (var kvp in creditsByAuthor.OrderBy(k => k.Key))
             {
                 var assets = kvp.Value
-                    .DistinctBy(x => x.assetName)
+                    .Distinct(new AssetNameEqualityComparer())
                     .Select(x => string.IsNullOrEmpty(x.assetLink) ? x.assetName : $"{x.assetName} ({x.assetLink})")
                     .ToList();
                 string assetList = string.Join(", ", assets);
@@ -117,6 +117,20 @@ namespace GirlyDrink.CreditTool.Editor
             }
 
             return output.Length > 0 ? output.ToString().Trim() : "No credits found.";
+        }
+
+        // Custom equality comparer to deduplicate based on assetName
+        private class AssetNameEqualityComparer : IEqualityComparer<(string assetName, string assetLink)>
+        {
+            public bool Equals((string assetName, string assetLink) x, (string assetName, string assetLink) y)
+            {
+                return x.assetName == y.assetName;
+            }
+
+            public int GetHashCode((string assetName, string assetLink) obj)
+            {
+                return obj.assetName.GetHashCode();
+            }
         }
     }
 }
