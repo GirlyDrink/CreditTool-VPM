@@ -1,7 +1,7 @@
 {
-    "name": "Tchoutchawn.CreditTool.Editor",
+    "name": "GirlyDrink.CreditTool.Editor",
     "references": [
-        "Tchoutchawn.CreditTool"
+        "GirlyDrink.CreditTool"
     ],
     "includePlatforms": [
         "Editor"

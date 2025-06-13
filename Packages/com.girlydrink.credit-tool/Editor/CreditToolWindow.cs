@@ -4,9 +4,9 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Tchoutchawn.CreditTool;
+using GirlyDrink.CreditTool;
 
-namespace Tchoutchawn.CreditTool.Editor
+namespace GirlyDrink.CreditTool.Editor
 {
     public class CreditToolWindow : EditorWindow
     {
@@ -24,7 +24,7 @@ namespace Tchoutchawn.CreditTool.Editor
 
         private void OnGUI()
         {
-            GUILayout.Label("Credit Tool by tchoutchawn", EditorStyles.boldLabel);
+            GUILayout.Label("Credit Tool by GirlyDrink", EditorStyles.boldLabel);
             GUILayout.Space(10);
 
             targetObject = (GameObject)EditorGUILayout.ObjectField(

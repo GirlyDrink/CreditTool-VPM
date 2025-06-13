@@ -1,12 +1,12 @@
 {
-  "name": "com.tchoutchawn.credit-tool",
+  "name": "com.girlydrink.credit-tool",
   "displayName": "Credit Tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2022.3",
   "description": "A tool for VRChat creators to manage and compile credits for prefabs in avatars and worlds. Add the Editor-only CreditComponent (implementing IEditorOnly) to prefabs with author and single asset details, then use the Credit Tool window (Tools > Credit Tool) to generate a formatted credit list in a textbox, merging assets by author.",
   "author": {
-    "name": "tchoutchawn",
-    "url": "https://github.com/tchoutchawn"
+    "name": "GirlyDrink",
+    "url": "https://github.com/GirlyDrink"
   },
   "vpmDependencies": {
     "com.vrchat.base": "^3.5.x"
@@ -19,7 +19,7 @@
     "world"
   ],
   "license": "MIT",
-  "changelogUrl": "https://github.com/tchoutchawn/credit-tool/blob/main/CHANGELOG.md",
-  "documentationUrl": "https://github.com/tchoutchawn/credit-tool/blob/main/README.md",
-  "licensesUrl": "https://github.com/tchoutchawn/credit-tool/blob/main/LICENSE"
+  "changelogUrl": "https://github.com/GirlyDrink/credit-tool/blob/main/CHANGELOG.md",
+  "documentationUrl": "https://github.com/GirlyDrink/credit-tool/blob/main/README.md",
+  "licensesUrl": "https://github.com/GirlyDrink/credit-tool/blob/main/LICENSE"
 }

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1] - 2025-06-13
+### Changed
+- Updated package name to `com.girlydrink.credit-tool` and username to `GirlyDrink`.
+- Updated namespaces to `GirlyDrink.CreditTool` and `GirlyDrink.CreditTool.Editor`.
+- Updated assembly definitions to `GirlyDrink.CreditTool` and `GirlyDrink.CreditTool.Editor`.
+- Updated GitHub repository URLs to `https://github.com/GirlyDrink/credit-tool`.
+
 ## [1.0.0] - 2025-06-12
 ### Added
 - Initial release of Credit Tool.

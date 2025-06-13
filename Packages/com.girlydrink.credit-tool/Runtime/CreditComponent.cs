@@ -1,7 +1,7 @@
 using UnityEngine;
 using VRC.SDKBase;
 
-namespace Tchoutchawn.CreditTool
+namespace GirlyDrink.CreditTool
 {
     public class CreditComponent : MonoBehaviour, IEditorOnly
     {
