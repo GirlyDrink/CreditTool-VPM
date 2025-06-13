@@ -2,7 +2,9 @@ name: Build Release
 
 on: 
   workflow_dispatch:
-
+  push:
+    branches: main
+    paths: Packages/com.girlydrink.credit-tool/package.json
 jobs:
 
   # Validate Repository Configuration
