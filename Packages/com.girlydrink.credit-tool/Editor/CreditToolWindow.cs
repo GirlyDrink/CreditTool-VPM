@@ -14,6 +14,8 @@ namespace GirlyDrink.CreditTool.Editor
         private Vector2 scrollPosition;
         private string creditList = "";
         private Vector2 textScrollPosition;
+        private bool includeAssetLinks = true;
+        private bool includeAuthorLinks = true;
 
         [MenuItem("Tools/GirlyDrink's Tools/Credit Tool")]
         public static void ShowWindow()
@@ -33,6 +35,11 @@ namespace GirlyDrink.CreditTool.Editor
                 typeof(GameObject),
                 true
             );
+
+            GUILayout.Space(10);
+            GUILayout.Label("Output Options:", EditorStyles.boldLabel);
+            includeAssetLinks = EditorGUILayout.Toggle("Include Asset Links", includeAssetLinks);
+            includeAuthorLinks = EditorGUILayout.Toggle("Include Author Store Links", includeAuthorLinks);
 
             GUILayout.Space(10);
             if (GUILayout.Button("Generate Credit List"))
@@ -61,7 +68,9 @@ namespace GirlyDrink.CreditTool.Editor
             scrollPosition = GUILayout.BeginScrollView(scrollPosition);
             GUILayout.Label(
                 "- Add the 'Credit Component' to prefabs with author and asset details in the Editor.\n" +
+                "- Fill in Author Name, Author Store Link, Asset Name, and Asset Link as needed.\n" +
                 "- Select a root GameObject (e.g., avatar or world root).\n" +
+                "- Choose whether to include Asset Links and Author Store Links in the output.\n" +
                 "- Click 'Generate Credit List' to display credits in the textbox below.\n" +
                 "- Select and copy the text from the textbox to paste into your VRChat description.\n" +
                 "- The Credit Component is Editor-only and will not be included in VRChat builds.",
@@ -76,28 +85,35 @@ namespace GirlyDrink.CreditTool.Editor
             var creditComponents = root.GetComponentsInChildren<CreditComponent>(true);
 
             // Group by author
-            var creditsByAuthor = new Dictionary<string, List<string>>();
+            var creditsByAuthor = new Dictionary<string, List<(string assetName, string assetLink)>>();
             foreach (var component in creditComponents)
             {
                 if (string.IsNullOrEmpty(component.authorName) || string.IsNullOrEmpty(component.assetName))
                     continue;
 
                 string authorKey = component.authorName;
-                if (!string.IsNullOrEmpty(component.assetLink))
-                    authorKey += $" ({component.assetLink})";
+                if (includeAuthorLinks && !string.IsNullOrEmpty(component.authorStoreLink))
+                    authorKey += $" ({component.authorStoreLink})";
 
                 if (!creditsByAuthor.ContainsKey(authorKey))
-                    creditsByAuthor[authorKey] = new List<string>();
+                    creditsByAuthor[authorKey] = new List<(string, string)>();
 
-                creditsByAuthor[authorKey].Add(component.assetName);
+                creditsByAuthor[authorKey].Add((
+                    component.assetName,
+                    includeAssetLinks && !string.IsNullOrEmpty(component.assetLink) ? component.assetLink : ""
+                ));
             }
 
             // Format the output
             StringBuilder output = new StringBuilder();
             foreach (var kvp in creditsByAuthor.OrderBy(k => k.Key))
             {
-                string assets = string.Join(", ", kvp.Value.Distinct());
-                output.AppendLine($"{kvp.Key}: {assets}");
+                var assets = kvp.Value
+                    .DistinctBy(x => x.assetName)
+                    .Select(x => string.IsNullOrEmpty(x.assetLink) ? x.assetName : $"{x.assetName} ({x.assetLink})")
+                    .ToList();
+                string assetList = string.Join(", ", assets);
+                output.AppendLine($"{kvp.Key}: {assetList}");
             }
 
             return output.Length > 0 ? output.ToString().Trim() : "No credits found.";

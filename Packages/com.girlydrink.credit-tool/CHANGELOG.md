@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.3] - 2025-06-13
+### Added
+- Added `authorStoreLink` field to `CreditComponent` for author store or profile URLs.
+- Added toggles in `CreditToolWindow` to include/exclude `assetLink` and `authorStoreLink` in the output.
+- Updated output format to support both author store and asset links (e.g., `Author1 (StoreLink): Asset1 (AssetLink)`).
+
+### Changed
+- Updated `README.md` and `package.json` to reflect new fields and toggle options.
+
 ## [1.0.2] - 2025-06-13
 ### Changed
 - Moved the Credit Tool menu item from `Tools/Credit Tool` to `Tools/GirlyDrink's Tools/Credit Tool`.
